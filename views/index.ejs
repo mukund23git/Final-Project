@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li class="items" id="item-2"><a href="/index">Home</a></li>
+            <li class="items" id="item-3"><a href="/create">Create Your Blog</a></li>
+            <li class="items" id="item-4"><a href="/update">Update and Delete Your Blogs</a></li>
+        </ul>
+    </nav>
+    <div class="main" style="background-color: white;">
+        <div class="right">
+            <div class="heading">
+                <h1 id="heading" style="font-size: 2.6rem;">Welcome To Blogzz!</h1>
+            </div>
+
+            <div class="heading-content">
+                <p class="text" style="font-size: large;">Welcome to Blogzz! Dive into a world of captivating tales and enlightening
+                    discussions. From insightful articles to personal reflections, we offer a diverse range of content
+                    to ignite your curiosity and spark your imagination. Whether you're here for inspiration or
+                    entertainment, our blog is your gateway to a universe of endless possibilities. Join our community
+                    of avid readers and writers, and let's embark on this exciting journey together. Welcome, and let
+                    the exploration begin!</p>
+            </div>
+
+        </div>
+        <div class="left">
+            <img class="typewriter" src="/images/typewriter.png" alt="typewriter">
+        </div>
+    </div>
+    <div class="articles">
+        <div class="article-description">
+            <h1 id="featured-articles">Featured Articles</h1>
+        </div>
+        <% for(i=data.allBlogs.length-1; i>= 0; i--){ %>
+            <div class="article" id="article1">
+                <div class="right1">
+                    <img class="article-image" src="/images/article.png" alt="">
+                </div>
+                <div class="left1">
+                    <h1 class="blog-topic"><a href="#">
+                            <%= data.allBlogs[i].title %>
+                        </a></h1>
+                    <p>
+                        <%= data.allBlogs[i].content %>
+                    </p>
+                    <div class="article-bottom">
+                        <span id="name">Author Name - <%= data.allBlogs[i].name %></span>
+                        <span id="date">Date : <%= data.allBlogs[i].time %></span>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+    </div>
+    <script src="/javascripts/index.js"></script>
+</body>
+
+</html>
